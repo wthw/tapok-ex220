@@ -74,7 +74,7 @@ in U-Boot console.
 |------|--------|--------|
 | — | Factory reset attempted | Password stuck, device unmanageable |
 | 2026-04-17 | Project started, initial research    | See `notes/research.md` |
-| 2026-05-10 | angled 1x4 pin UART header installed | Jumper wires connected, VCC and GND pin verified |
+| 2026-05-10 | [angled 1x4 pin UART header installed](notes/UART-OpenWrt-flash.md#gallery) | Jumper wires connected, VCC and GND pin verified |
 | 2026-05-17 | CH341 UART connected, U-Boot console reached | Boot menu confirmed, selected option 0 |
 | 2026-05-17 | Initramfs loaded via TFTP (snapshot r34469)  | OpenWrt shell — note: router IP is **192.168.1.1**, not 192.168.0.1 |
 | 2026-05-17 | All 13 MTD partitions backed up via netcat   | Saved to `dumps/` — full 16 MiB flash covered |

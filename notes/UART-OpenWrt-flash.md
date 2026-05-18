@@ -124,6 +124,7 @@ Router reboots into permanent OpenWrt at `192.168.1.1`.
 - Restore stock firmware: flash `dumps/mtd9_firmware.bin` back to the firmware partition
 - Factory/radio partitions must be preserved — they contain hardware-specific calibration
 
+## Gallery
 
 | A-> | B-> | C-> |
 |-------------------------------------|-------------------------------------|-------------------------------------|
