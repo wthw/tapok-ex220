@@ -1,10 +1,13 @@
 # TP-Link EX220 Liberation
 
-Documenting the process of freeing a TP-Link EX220 Wi-Fi 6 router from ISP (Ucom) lock and flashing it with OpenWrt firmware.
+Freeing a TP-Link EX220 Wi-Fi 6 router
+from ISP lock by flashing it with OpenWrt firmware.
 
 ## Background
 
-Ucom provided this router in a locked state — management is exclusively through TP-Link's proprietary cloud platform. A factory reset attempt left the device in a broken state: the admin password appears stuck and neither I nor the ISP can manage it normally.
+Ucom provided this router in a locked state - management is exclusively through Aginet - a proprietary cloud platform.
+A factory reset attempt left the device in a broken state: the admin password appears stuck
+and neither I nor the ISP (I supposed) can manage it normally.
 
 ## Hardware
 
@@ -76,6 +79,7 @@ in U-Boot console.
 | 2026-04-17 | Project started, initial research    | See `notes/research.md` |
 | 2026-05-10 | [angled 1x4 pin UART header installed](notes/UART-OpenWrt-flash.md#gallery) | Jumper wires connected, VCC and GND pin verified |
 | 2026-05-17 | CH341 UART connected, U-Boot console reached | Boot menu confirmed, selected option 0 |
-| 2026-05-17 | Initramfs loaded via TFTP (snapshot r34469)  | OpenWrt shell — note: router IP is **192.168.1.1**, not 192.168.0.1 |
-| 2026-05-17 | All 13 MTD partitions backed up via netcat   | Saved to `dumps/` — full 16 MiB flash covered |
-| 2026-05-17 | Sysupgrade image flashed | OpenWrt installed |
+| 2026-05-17 | Initramfs loaded via TFTP (snapshot r34469)  | OpenWrt shell (BusyBox v1.37.0)        |
+| 2026-05-17 | All 13 MTD partitions backed up via netcat   | [`dumps/`](dumps/) — full 16 MiB flash |
+| 2026-05-17 | Sysupgrade image flashed                     | OpenWrt installed                      |
+| 2026-05-30 | Clarify flash layout and MTD terms etc.      | [MTD-layout](notes/MTD-layout.md)      |
