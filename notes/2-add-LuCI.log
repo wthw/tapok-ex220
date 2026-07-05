@@ -1,0 +1,135 @@
+$ sudo ip route del  default via 192.168.1.1
+$ ssh root@192.168.1.1
+
+
+BusyBox v1.37.0 (2026-01-02 17:07:02 UTC) built-in shell (ash)
+
+  _______                     ________        __
+ |       |.-----.-----.-----.|  |  |  |.----.|  |_
+ |   -   ||  _  |  -__|     ||  |  |  ||   _||   _|
+ |_______||   __|_____|__|__||________||__|  |____|
+          |__| W I R E L E S S   F R E E D O M
+ -----------------------------------------------------
+ OpenWrt SNAPSHOT, r34469-862a4edfa6
+ -----------------------------------------------------
+root@OpenWrt:~# apk update
+ [https://downloads.openwrt.org/snapshots/targets/ramips/mt7621/packages/packages.adb]
+ [https://downloads.openwrt.org/snapshots/packages/mipsel_24kc/base/packages.adb]
+ [https://downloads.openwrt.org/snapshots/targets/ramips/mt7621/kmods/6.18.31-1-dd4a739b85b3b8cf4805f46b31ebe474/packages.adb]
+ [https://downloads.openwrt.org/snapshots/packages/mipsel_24kc/luci/packages.adb]
+ [https://downloads.openwrt.org/snapshots/packages/mipsel_24kc/packages/packages.adb]
+ [https://downloads.openwrt.org/snapshots/packages/mipsel_24kc/routing/packages.adb]
+ [https://downloads.openwrt.org/snapshots/packages/mipsel_24kc/telephony/packages.adb]
+ [https://downloads.openwrt.org/snapshots/packages/mipsel_24kc/video/packages.adb]
+OK: 11088 distinct packages available
+
+root@OpenWrt:~# apk upgrade
+( 1/39) Upgrading libgcc1 (14.3.0-r5 -> 14.4.0-r5)
+( 2/39) Installing libubox20260523 (2026.05.23~1fe93d2f-r1)
+( 3/39) Upgrading libuclient20201210 (2026.02.20~7a0aa2e4-r1 -> 2026.06.07~daad21fa-r1)
+( 4/39) Upgrading uclient-fetch (2026.02.20~7a0aa2e4-r1 -> 2026.06.07~daad21fa-r1)
+  Executing uclient-fetch-2026.06.07~daad21fa-r1.post-upgrade
+  * add alternative: /usr/bin/wget -> /bin/uclient-fetch
+( 5/39) Installing libblobmsg-json20260523 (2026.05.23~1fe93d2f-r1)
+( 6/39) Installing libubus20260628 (2026.06.28~24864e78-r1)
+( 7/39) Upgrading rpcd (2025.12.03~ffb9961c-r1 -> 2026.06.04~28faf640-r1)
+( 8/39) Upgrading rpcd-mod-rpcsys (2025.12.03~ffb9961c-r1 -> 2026.06.04~28faf640-r1)
+( 9/39) Upgrading busybox (1.37.0-r6 -> 1.38.0-r2)
+(10/39) Upgrading ubusd (2025.12.02~3cc98db1-r1 -> 2026.06.28~24864e78-r1)
+(11/39) Upgrading ubus (2025.12.02~3cc98db1-r1 -> 2026.06.28~24864e78-r1)
+(12/39) Upgrading fstools (2026.02.15~8d377aa6-r1 -> 2026.05.23~16718b6e-r1)
+(13/39) Upgrading jshn (2026.05.03~1501e60e-r1 -> 2026.05.23~1fe93d2f-r1)
+(14/39) Upgrading libucode20230711 (2026.04.24~0beaa9dc-r1 -> 2026.06.03~3ec4e5c2-r1)
+(15/39) Upgrading ucode (2026.04.24~0beaa9dc-r1 -> 2026.06.03~3ec4e5c2-r1)
+(16/39) Upgrading ucode-mod-fs (2026.04.24~0beaa9dc-r1 -> 2026.06.03~3ec4e5c2-r1)
+(17/39) Upgrading ucode-mod-ubus (2026.04.24~0beaa9dc-r1 -> 2026.06.03~3ec4e5c2-r1)
+(18/39) Upgrading ucode-mod-uci (2026.04.24~0beaa9dc-r1 -> 2026.06.03~3ec4e5c2-r1)
+(19/39) Upgrading ucode-mod-uloop (2026.04.24~0beaa9dc-r1 -> 2026.06.03~3ec4e5c2-r1)
+(20/39) Upgrading netifd (2026.04.23~e45b890f-r1 -> 2026.06.16~d155e4ce-r1)
+  Executing netifd-2026.06.16~d155e4ce-r1.post-upgrade
+  * pid 330's current affinity list: 0
+  * pid 330's new affinity list: 0
+  * pid 331's current affinity list: 0
+  * pid 331's new affinity list: 0
+(21/39) Installing libjson-script20260523 (2026.05.23~1fe93d2f-r1)
+(22/39) Upgrading procd (2026.03.25~cd7a4e5f-r1 -> 2026.06.17~60fdbf00-r1)
+(23/39) Upgrading procd-seccomp (2026.03.25~cd7a4e5f-r1 -> 2026.06.17~60fdbf00-r1)
+(24/39) Upgrading ca-bundle (20260223-r1 -> 20260601-r1)
+(25/39) Upgrading dnsmasq (2.92-r2 -> 2.93-r2)
+  Installing file to etc/config/dhcp.apk-new
+  Executing dnsmasq-2.93-r2.post-upgrade
+(26/39) Upgrading dropbear (2025.89-r1 -> 2026.91-r1)
+  Executing dropbear-2026.91-r1.post-upgrade
+  * add alternative: /usr/bin/ssh-keygen -> /usr/sbin/dropbear
+  * add alternative: /usr/bin/scp -> /usr/sbin/dropbear
+  * add alternative: /usr/bin/ssh -> /usr/sbin/dropbear
+(27/39) Upgrading nftables-json (1.1.6-r1 -> 1.1.6-r4)
+(28/39) Upgrading ucode-mod-digest (2026.04.24~0beaa9dc-r1 -> 2026.06.03~3ec4e5c2-r1)
+(29/39) Upgrading ucode-mod-nl80211 (2026.04.24~0beaa9dc-r1 -> 2026.06.03~3ec4e5c2-r1)
+(30/39) Upgrading ucode-mod-rtnl (2026.04.24~0beaa9dc-r1 -> 2026.06.03~3ec4e5c2-r1)
+(31/39) Upgrading wireless-regdb (2026.03.18-r1 -> 2026.05.30-r1)
+(32/39) Upgrading mtd (27 -> 28)
+(33/39) Upgrading odhcp6c (2026.01.25~24485bb4-r1 -> 2026.06.27~10a52220-r2)
+(34/39) Upgrading odhcpd-ipv6only (2026.03.16~160e5fa3-r1 -> 2026.06.28~68f38269-r1)
+(35/39) Upgrading rpcd-mod-file (2025.12.03~ffb9961c-r1 -> 2026.06.04~28faf640-r1)
+(36/39) Upgrading ucode-mod-uclient (2026.02.20~7a0aa2e4-r1 -> 2026.06.07~daad21fa-r1)
+(37/39) Upgrading ppp (2.5.2-r3 -> 2.5.3-r1)
+(38/39) Upgrading ppp-mod-pppoe (2.5.2-r3 -> 2.5.3-r1)
+(39/39) Upgrading procd-ujail (2026.03.25~cd7a4e5f-r1 -> 2026.06.17~60fdbf00-r1)
+
+OK: 11.4 MiB in 125 packages
+
+### LuCI
+root@OpenWrt:~# apk add luci
+( 1/27) Installing cgi-io (2026.06.28~7314451c-r1)
+( 2/27) Installing liblucihttp0 (2023.03.15~9b5b683f-r1)
+( 3/27) Installing liblucihttp-ucode (2023.03.15~9b5b683f-r1)
+( 4/27) Installing rpcd-mod-luci (20240305-r1)
+( 5/27) Installing rpcd-mod-ucode (2026.06.04~28faf640-r1)
+( 6/27) Installing ucode-mod-html (1)
+( 7/27) Installing ucode-mod-log (2026.06.03~3ec4e5c2-r1)
+( 8/27) Installing ucode-mod-math (2026.06.03~3ec4e5c2-r1)
+( 9/27) Installing luci-base (26.184.55701~45b3640)
+(10/27) Installing luci-app-package-manager (26.184.55701~45b3640)
+(11/27) Installing luci-app-firewall (26.184.55701~45b3640)
+(12/27) Installing luci-lib-uqr (26.184.55701~45b3640)
+(13/27) Installing libiwinfo-data (2026.05.26~66bdd1a0-r1)
+(14/27) Installing libiwinfo20230701 (2026.05.26~66bdd1a0-r1)
+(15/27) Installing rpcd-mod-iwinfo (2026.06.04~28faf640-r1)
+(16/27) Installing luci-mod-network (26.184.55701~45b3640)
+(17/27) Installing luci-mod-status (26.184.55701~45b3640)
+(18/27) Installing luci-mod-system (26.184.55701~45b3640)
+(19/27) Installing luci-mod-admin-full (26.184.55701~45b3640)
+(20/27) Installing luci-proto-ipv6 (26.184.55701~45b3640)
+(21/27) Installing luci-proto-ppp (26.184.55701~45b3640)
+(22/27) Installing luci-theme-bootstrap (26.184.55701~45b3640)
+  Executing luci-theme-bootstrap-26.184.55701~45b3640.post-install
+  * /luci-static/bootstrap
+(23/27) Installing rpcd-mod-rrdns (20170710)
+(24/27) Installing uhttpd (2026.06.16~7b1bec45-r1)
+  Executing uhttpd-2026.06.16~7b1bec45-r1.post-install
+  * 4+0 records in
+  * 4+0 records out
+(25/27) Installing uhttpd-mod-ubus (2026.06.16~7b1bec45-r1)
+  Executing uhttpd-mod-ubus-2026.06.16~7b1bec45-r1.post-install
+  * 4+0 records in
+  * 4+0 records out
+(26/27) Installing luci-light (26.184.55701~45b3640)
+(27/27) Installing luci (26.184.55701~45b3640)
+
+OK: 13.3 MiB in 152 packages
+
+###
+root@OpenWrt:~# df -h
+Filesystem                Size      Used Available Use% Mounted on
+/dev/root                 4.3M      4.3M         0 100% /rom
+tmpfs                    57.3M      1.8M     55.6M   3% /tmp
+/dev/mtdblock12           7.6M      3.2M      4.4M  42% /overlay
+overlayfs:/overlay        7.6M      3.2M      4.4M  42% /
+tmpfs                   512.0K         0    512.0K   0% /dev
+
+### Enable / start
+root@OpenWrt:~# /etc/init.d/uhttpd enable
+root@OpenWrt:~# /etc/init.d/uhttpd start
+4+0 records in
+4+0 records out
